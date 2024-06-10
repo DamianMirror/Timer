@@ -1,0 +1,78 @@
+body{
+  background-image: url(assets/background.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.06); /* Чорний колір з прозорістю 50% */
+  pointer-events: none; /* Щоб шар не взаємодіяв з користувачем */
+  z-index: -1; /* Переконайтеся, що шар буде під вмістом сторінки */
+}
+
+.clock-container {
+  width: 500px;
+  height: 200px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed; /* Ensure the container is fixed in place */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  flex-direction: column;
+  z-index: 2; /* Щоб контейнер був поверх затемнення */
+
+  background-color: rgba(255, 255, 255, 0.1); /* Slight translucent background color */
+  border-radius: 15px; /* Rounded corners */
+  padding: 20px; /* Padding inside the container */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Smooth blurred shadow */
+  backdrop-filter: blur(10px); /* Apply a smooth blur effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+}
+
+.clock{
+  width: 100%;
+  height: 100px;
+  color: #911717;
+  font-family: Courier, monospace;
+  font-weight: bold;
+  text-shadow: 5px 5px 5px #5b1010;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.clock h1{
+  font-size: 6rem;
+}
+
+.links {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0 0;
+  display: flex;
+  gap: 20px;
+}
+
+.links svg {
+  width: 40px;
+  height: 40px;
+  fill: #911717;
+}
+
+
